@@ -1,0 +1,13 @@
+/* pages/get/get.wxss */
+.img{
+ display:flex;                   
+ justify-content: center;    
+ justify-content:center;
+
+}
+
+
+.imagesize{
+ display:flex;                   
+ justify-content: center;        
+}

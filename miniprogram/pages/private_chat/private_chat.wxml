@@ -1,0 +1,37 @@
+<block wx:for="{{arry}}">
+  <block wx:if="{{openid == item.send_openid}}">
+    <view class="cu-chat">
+      <view class="cu-item self">
+        <view class="main">
+          <view class="content bg-green shadow">
+            <text>{{item.inputValue}}</text>
+          </view>
+        </view>
+        <view class="cu-avatar radius" style="background-image:url({{item.send_head}});"></view>
+        <view class="date">{{item.time}}</view>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{openid == item.receive_openid}}">
+  <view class="cu-chat">
+    <view class="cu-item">
+      <view class="cu-avatar radius" style="background-image:url({{item.send_head}});"></view>
+      <view class="main">
+        <view class="content shadow">
+          <text>{{item.inputValue}}</text>
+        </view>
+      </view>
+      <view class="date "> {{item.time}}</view>
+    </view>
+    </view>
+  </block>
+</block>
+
+
+
+
+
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <input class="solid-bottom" bindinput="bindKeyInput" placeholder="" value="{{inputValue}}" maxlength="300" cursor-spacing="10"></input>
+  <button class="btn001" bindtap="sendthem">发送</button>
+</view>

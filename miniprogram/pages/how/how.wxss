@@ -1,0 +1,16 @@
+/* pages/get/get.wxss */
+page{
+  background-color: hsla(0, 43%, 99%, 0);
+}
+.img{
+ display:flex;                   
+ justify-content: center;    
+ justify-content:center;
+
+}
+
+
+.imagesize{
+ display:flex;                   
+ justify-content: center;        
+}

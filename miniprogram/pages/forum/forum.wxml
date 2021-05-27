@@ -1,0 +1,57 @@
+<view wx:if="{{!(userInfo == '' || userInfo == null ||userInfo == 'undefine')}}">
+  <block wx:if="{{hidden1}}">
+    <button bindtap="add_talk" class="talk1">点我说两句</button>
+  </block>
+  <block wx:elif="{{!hidden1}}">
+    <view>
+      <view class='textBox'>
+     <image bindtap="identity" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <textarea class="inputBox" maxlength="-1" bindinput="bindKeyInput" placeholder="发表意见要注意文明哦~~" value="{{inputValue}}">
+          <view class="line"></view>
+          <view class="line"></view>
+        </textarea>
+      </view>
+      <view class="btns">
+
+        <button bindtap="sendthem" class="talk2" hover-class='btn_hover'>biubiubiu</button>
+      </view>
+    </view>
+  </block>
+
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+
+  <view class="cu-list menu-avatar comment solids-top">
+    <block wx:for="{{arry}}">
+
+      <view class="cu-item">
+       <view class="cu-avatar round" bindtap="identity_real" mode="cover" data-openid='{{item.openid}}' data-nickName='{{item.nickName}}' data-head='{{item.head}}' data-gender='{{item.gender}}' style="background-image:url({{item.head}});"></view>
+
+        <view class="content">
+          <view class="text-grey">{{item.nickName}}</view>
+          <view class="text-gray text-content text-df">
+            {{item.inputValue}}
+          </view>
+
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{item.time}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view wx:elif="{{(userInfo == '' || userInfo == null)}}">
+<view class="wrapper">
+  <view class="loginform">
+    <view id="owl-login">
+      <image class="head" src="../img/owl-login.png"></image>
+      <view class="hand {{inputPassword ? 'hand-password' : ''}}"></view>
+      <view class="hand hand-r {{inputPassword ? 'hand-r-password' : ''}}"></view>
+    </view>
+    <view class="control-group">
+      <button disabled="{{isLoading}}" loading="{{isLoading}}" class="btn1" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权使用</button>
+    </view>
+  </view>
+</view>
+</view>

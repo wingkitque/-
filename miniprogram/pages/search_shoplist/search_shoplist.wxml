@@ -1,0 +1,37 @@
+<view bindtap="select_pic" data-cardCur="{{cardCur}}">
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+  <view class="cu-list menu-avatar">
+        <block wx:for="{{arry}}" wx:key="index">
+            <view class="cu-item" bindtap="more" data-id="{{item.id}}" data-name="{{item.name}}" data-number="{{item.number}}" data-identity="{{item.identity}}" data-atten="{{item.atten}}" data-phone="{{item.phone}}">
+              <!-- <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view> -->
+              <view class="content">
+                <text class="text-cut">{{index+1}}、{{item.name}}</text>
+
+                <view class="text-gray text-sm flex">
+                  <text class="text-cut">店铺可使用</text>
+                </view>
+              </view>
+              <view class="action">
+                <view class="text-grey text-xs">更多</view>
+              </view>
+            </view>
+        </block>
+        </view>
+        <block wx:if="{{(arry == '' || arry == null)}}">
+        <view class="text">
+        <view>可能网络有点拥堵~~</view>
+        <view>请稍后尝试</view>
+        <view>可能暂无搜索记录</view>
+        <view>可以进行在主页意见反馈哦</view>
+        <view>十分感谢您的使用~~</view>
+        </view>
+</block>

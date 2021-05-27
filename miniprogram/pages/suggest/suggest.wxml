@@ -1,0 +1,41 @@
+
+<view bindtap="select_pic" data-cardCur="{{cardCur}}">
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+  <view class="padding text-center">
+    <view class="padding-xl radius shadow bg-white">意见反馈</view>
+  </view>
+  <view class="cu-item arrow">
+    <button class="cu-btn content" bindtap='suggest' data-type="1" style="background-color: {{bcA}};">
+      <text class="cuIcon-writefill text-cyan"></text>
+      <text class="text-grey">意见反馈</text>
+    </button>
+  </view>
+  <view class="cu-item arrow">
+    <button class="cu-btn content" bindtap='suggest' data-type="2" style="background-color: {{bcB}};">
+      <text class="cuIcon-writefill text-cyan"></text>
+      <text class="text-grey">商家加入</text>
+    </button>
+  </view>
+  <view class="cu-item arrow">
+    <button class="cu-btn content" bindtap='suggest' data-type="3" style="background-color: {{bcC}};">
+      <text class="cuIcon-writefill text-cyan"></text>
+      <text class="text-grey">商务合作</text>
+    </button>
+  </view>
+  <view class="cu-item arrow">
+    <button class="cu-btn content" bindtap='suggest' data-type="3" style="background-color: {{bcD}};">
+      <text class="cuIcon-writefill text-cyan"></text>
+      <text class="text-grey">推广合作</text>
+    </button>
+  </view>
+</view>

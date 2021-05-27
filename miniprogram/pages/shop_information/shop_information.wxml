@@ -1,0 +1,29 @@
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>{{name}}
+  </view>
+</view>
+<view class="padding text-center">
+  <view class="padding-lr bg-white">
+    <view class="solid-bottom padding">
+      <view class="padding">店铺：{{name}}</view>
+    </view>
+    <block wx:if="{{!(number == 'undefined' || number == null || number == '')}}">
+    <view class="solid-bottom padding">
+      <view class="padding">微信支付的交易单号/商户号：{{number}}</view>
+    </view>
+    </block>
+
+    <block wx:if="{{!(atten == 'undefined' || atten == 'null' || atten == '')}}">
+    <view class="solid-bottom padding">
+      <view class="padding">联系人：{{atten}}</view>
+    </view>
+    </block>
+
+    <block wx:if="{{!(phone == 'undefined' || phone == 'null' || phone == '')}}">
+    <view class="solid-bottom padding">
+      <view class="padding">咨询电话：{{phone}}</view>
+    </view>
+    </block>
+  </view>
+</view>

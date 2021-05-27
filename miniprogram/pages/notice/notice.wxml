@@ -1,0 +1,21 @@
+<block wx:for="{{arry}}" wx:key="index">
+  <view class="cu-timeline">
+    <block wx:if="{{item.state==1}}">
+      <view class="cu-time">{{item.time}}</view>
+      <view class="cu-item">
+        <view class="content">
+          <text>【{{item.institution}}】{{item.department}}：</text> {{item.content}}
+        </view>
+      </view>
+    </block>
+
+    <block wx:elif="{{item.state==0}}">
+      <view class="cu-item text-grey cuIcon-evaluate_fill">
+        <view class="cu-time">已失效</view>
+        <view class="content bg-grey shadow-blur">
+          <text>【{{item.institution}}】{{item.department}}：</text> {{item.content}}
+        </view>
+      </view>
+    </block>
+  </view>
+</block>

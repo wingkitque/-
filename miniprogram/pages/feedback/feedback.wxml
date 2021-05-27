@@ -1,0 +1,44 @@
+<!-- <view>
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+<view> -->
+<view wx:if="{{!hasUserInfo && canIUse}}">
+  <view class='content'>
+    <view>申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">
+    授权登录
+  </button>
+</view>
+<block wx:else>
+  <view class="logo">
+    清远资讯通
+  </view>
+   <block wx:if="{{type=='1'}}">
+    <view class="Email">请写下您需要反馈的内容,并附上联系方式，稍后会有专人联系您~~
+  </view>
+  </block>
+     <block wx:if="{{type=='2'}}">
+    <view class="Email">请写下商家的名称、地址和联系方式，稍后会有专人联系您~~
+  </view>
+  </block>
+     <block wx:if="{{type=='3'}}">
+    <view class="Email">请写下您的需求和联系方式，稍后会有专人联系您~~
+  </view>
+  </block>
+
+  
+  <view class='textBox'>
+    <textarea class="inputBox" maxlength="-1" bindinput="bindKeyInput" placeholder="写下一点东西吧！" value="{{inputValue}}">
+      <view class="line"></view>
+      <view class="line"></view>
+      <view class="line"></view>
+      <view class="line"></view>
+      <view class="line"></view>
+      <view class="line"></view>
+      <view class="line"></view>
+    </textarea>
+  </view>
+
+  <button class="btn1" bindtap="saveMemo" hover-class='btn_hover'>发送</button>
+</block>

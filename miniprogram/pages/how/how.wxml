@@ -1,0 +1,15 @@
+<view class="img">
+<image src="https://www.wingkit.xyz/qingyuan/img/how1.jpg" class='in-image' mode='widthFix'> </image>
+</view>
+<view class="img">
+<image src="https://www.wingkit.xyz/qingyuan/img/how2.jpg" class='in-image' mode='widthFix'> </image>
+</view>
+<view class="img">
+<image src="https://www.wingkit.xyz/qingyuan/img/how3.jpg" class='in-image' mode='widthFix'> </image>
+</view>
+<view class="img">
+<image src="https://www.wingkit.xyz/qingyuan/img/how4.jpg" class='in-image' mode='widthFix'> </image>
+</view>
+<view class="img">
+<image src="https://www.wingkit.xyz/qingyuan/img/how5.jpg" class='in-image' mode='widthFix'> </image>
+</view>

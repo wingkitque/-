@@ -1,0 +1,78 @@
+/* pages/select_seat/select_seat.wxss */
+.Box{
+  margin-top: 30rpx;
+}
+.select{
+  display: flex;
+  justify-content: space-between;/*左右两端对齐 */
+  align-items: center;/* 垂直居中 */
+  /*border: 2px solid black; */
+  padding-left: 30rpx;
+  padding-right: 380rpx; 
+}
+.point{
+  width:15rpx;
+  height: 15rpx;
+  background-color: #1E90FF;
+  border-radius: 50%; 
+  border: 2rpx solid #1E90FF;
+}
+.dated{
+  font-size: 30rpx;
+  color:gray;
+}
+.text{
+  border: 1px solid#DCDCDC;
+  margin: 6%;
+  padding: 25rpx;
+  /* height: 300rpx; */
+  font-size: 17px;
+  box-shadow:-2px 0px 5px 5px #F5F5F5;
+   border-radius: 20%; 
+}
+.btnBox{
+  border: 1rpx dotted gray;
+  border-left:none;
+  border-right:none;
+  border-bottom:none;
+}
+.btn{
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 25rpx;
+  background-color: white;
+  color: red;
+  margin-right: 15rpx;
+ 
+  
+}
+/* 去掉按钮边框 */
+.btn::after {
+  border: 0;
+}
+
+
+.logo{
+  border: 1rpx solid black;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 40rpx;
+  display: flex;
+  justify-content: space-between;/*左右两端对齐 */
+  align-items: center;/* 垂直居中 */
+  padding-right: 300rpx;
+  color: gray;
+}
+.img{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 50rpx;
+}
+.Email{
+   font-size: 30rpx;
+   color: gray;
+   margin-left:170rpx;
+}
+
+

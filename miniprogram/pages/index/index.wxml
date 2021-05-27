@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view wx:if="{{!(!hasUserInfo && canIUse)}}">
+  <view class="box">
+    <view class="cu-bar search bg-white">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索可使用优惠券商家" confirm-type="search" bindinput="bindKeyInput" value="{{searchValue}}"></input>
+      </view>
+      <view class="action">
+        <button style="width:30vw" class="btns" bindtap="search_book">搜索</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--index.wxml-->
+<view wx:if="{{!(!hasUserInfo && canIUse)}}">
+  <!-- 顶部轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 操作按钮 -->
+  <view class='btn-bar'>
+    <view class='btn-block' bindtap='shoplist'>
+      <view class="btn_op1">查看商家</view>
+    </view>
+    <view class='btn-block' bindtap='suggest'>
+      <view class="btn_op2">意见反馈</view>
+    </view>
+  </view>
+  <view class="ad-box" bindtap="show">
+    <image src='https://www.wingkit.xyz/qingyuan/img/show.jpg' class="image_ad"></image>
+  </view>
+  <view class="ad-box" bindtap="get">
+    <image src='https://www.wingkit.xyz/qingyuan/img/get.jpg' class="image_ad"></image>
+  </view>
+
+  <view class="ad-box" bindtap="how">
+    <image src='https://www.wingkit.xyz/qingyuan/img/how.jpg' class="image_ad"></image>
+  </view>
+</view>
+<view wx:else>
+  <view class="wrapper">
+    <view class="loginform">
+      <view id="owl-login">
+        <image class="head" src="../img/owl-login.png"></image>
+        <view class="hand {{inputPassword ? 'hand-password' : ''}}">123</view>
+        <view class="hand hand-r {{inputPassword ? 'hand-r-password' : ''}}">123</view>
+      </view>
+      <view class="control-group">
+        <button disabled="{{isLoading}}" loading="{{isLoading}}" class="btn1" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权使用</button>
+      </view>
+    </view>
+  </view>
+</view>
